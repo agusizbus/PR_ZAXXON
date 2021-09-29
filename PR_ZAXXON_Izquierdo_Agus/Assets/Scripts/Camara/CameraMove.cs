@@ -10,6 +10,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] Vector3 camaraVelocity = Vector3.zero;
     [SerializeField] Transform cameraHeight;
 
+
     void Update()
     {
 
@@ -24,7 +25,8 @@ public class CameraMove : MonoBehaviour
 
         transform.LookAt(cameraHeight);
 
-      
     }
 
- }
+
+
+}
