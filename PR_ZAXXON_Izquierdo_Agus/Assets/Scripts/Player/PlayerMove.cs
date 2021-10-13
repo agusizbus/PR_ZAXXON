@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] Transform initPos;
-    public float speedX = 100;
-    public float speedY = 100;
+    InitGameScript initGameScript;
+    public float speed = 100;
 
     //limites movimiento
 
-    float limitR = 20f;
-    float limitL = -20f;
-    float limitUp = 20f;
-    float limitBot = 0.2f;
+    float limitR = 30f;
+    float limitL = -30f;
+    float limitUp = 30f;
+    float limitBot = 1f;
 
     //Variable Bool movimiento
 
@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        initGameScript = GameObject.Find("InitGameEmpty").GetComponent<InitGameScript>();
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
         if (inlimitX)
         {
 
-            transform.Translate(Vector3.right * desplX * Time.deltaTime * speedX, Space.World);
+            transform.Translate(Vector3.right * desplX * Time.deltaTime * initGameScript.shipSpeed, Space.World);
         }
 
         //limite en X
@@ -77,7 +77,7 @@ public class PlayerMove : MonoBehaviour
         if (inlimitY)
         {
 
-            transform.Translate(Vector3.up * desplY * Time.deltaTime * speedY, Space.World);
+            transform.Translate(Vector3.up * desplY * Time.deltaTime * initGameScript.shipSpeed, Space.World);
         }
 
         //LIMITE EN Y
@@ -102,6 +102,8 @@ public class PlayerMove : MonoBehaviour
         //rotacion
         float rot = desplX * 1.2f;
         transform.Rotate(Vector3.back * Time.deltaTime * rot * 200f);
+
+      
 
 
     }

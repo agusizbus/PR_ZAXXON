@@ -6,6 +6,7 @@ public class ObstacleMove : MonoBehaviour
 {
 
     float speed;
+    float posz;
     GameObject initGameObject;
     InitGameScript  initGameScript;
 
@@ -21,7 +22,14 @@ public class ObstacleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        posz = transform.position.z;
         speed = initGameScript.shipSpeed;
         transform.Translate(Vector3.back * Time.deltaTime * speed);
+
+        if(posz < -20)
+        {
+
+            Destroy(gameObject);
+        }
     }
 }

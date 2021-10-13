@@ -7,7 +7,8 @@ public class InitGameScript : MonoBehaviour
 
     //VARIABLES INITGAME
 
-    public float shipSpeed;
+    public float shipSpeed=100;
+
 
     // Start is called before the first frame update
     void Start()

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675cc1ab1f5a0a34eb71ac3eaba4b839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 5.93
+  shipSpeed: 100
 --- !u!4 &396162787
 Transform:
   m_ObjectHideFlags: 0
@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brick: {fileID: 2134826310050675094, guid: 8019664dc8224d54a9869d2482223db9, type: 3}
-  initPos: {fileID: 787345914}
-  intervalo: 2
+  intervalo: 1
+  ObstacleDist: 100
 --- !u!4 &787345914
 Transform:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ Transform:
   m_GameObject: {fileID: 1820461253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27075028, y: 0, z: 778}
-  m_LocalScale: {x: 4, y: 1, z: 169.64444}
+  m_LocalScale: {x: 6, y: 1, z: 169.64444}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -892,7 +892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107846699}
-  - component: {fileID: 2107846701}
   - component: {fileID: 2107846700}
   m_Layer: 0
   m_Name: Player
@@ -932,21 +931,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initPos: {fileID: 2107846699}
-  speedX: 50
-  speedY: 50
---- !u!54 &2107846701
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107846698}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  speed: 200
