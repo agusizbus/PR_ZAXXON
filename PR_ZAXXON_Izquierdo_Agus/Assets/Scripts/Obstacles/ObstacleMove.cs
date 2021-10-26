@@ -23,7 +23,7 @@ public class ObstacleMove : MonoBehaviour
     void Update()
     {
         posz = transform.position.z;
-        speed = initGameScript.shipSpeed;
+        speed = initGameScript.shipSpeed * 1.5f;
         transform.Translate(Vector3.back * Time.deltaTime * speed);
 
         if(posz < -20)

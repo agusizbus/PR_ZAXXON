@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipSpeed: 100
+  gameLevel: 1
 --- !u!4 &396162787
 Transform:
   m_ObjectHideFlags: 0
@@ -166,36 +167,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &480408791
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480408792}
-  m_Layer: 0
-  m_Name: Bullets
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &480408792
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480408791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0015000105, y: 3.89, z: 0.8216001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -319,7 +290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5166221f7fad5184cb86bc9278eab520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brick: {fileID: 2134826310050675094, guid: 8019664dc8224d54a9869d2482223db9, type: 3}
+  column: {fileID: 787345912}
+  obstacles:
+  - {fileID: 7700532082595233871, guid: 4a198479636b99642b26a151b865cdef, type: 3}
+  - {fileID: 2134826310050675094, guid: 8019664dc8224d54a9869d2482223db9, type: 3}
+  - {fileID: 8518830028875197441, guid: 0632dbe02c781f340ae11f0b75a5ca1f, type: 3}
   intervalo: 1
   ObstacleDist: 100
 --- !u!4 &787345914
@@ -388,7 +363,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 63
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -464,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 1091848579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.120000005, z: 0}
-  m_LocalScale: {x: 3.87, y: 0.1, z: 1.63}
+  m_LocalScale: {x: 4, y: 0.1, z: 1.63}
   m_Children: []
   m_Father: {fileID: 1969799777}
   m_RootOrder: 0
@@ -624,7 +599,7 @@ GameObject:
   - component: {fileID: 1820461256}
   - component: {fileID: 1820461255}
   - component: {fileID: 1820461254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820461253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27075028, y: 0, z: 778}
+  m_LocalPosition: {x: 0, y: 0, z: 800}
   m_LocalScale: {x: 6, y: 1, z: 169.64444}
   m_Children: []
   m_Father: {fileID: 0}
@@ -720,7 +695,7 @@ GameObject:
   - component: {fileID: 1969799779}
   - component: {fileID: 1969799778}
   - component: {fileID: 1969799780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,13 +742,13 @@ Rigidbody:
   m_GameObject: {fileID: 1969799776}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 4
+  m_Drag: 0
   m_AngularDrag: 4
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 62
-  m_CollisionDetection: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!65 &1969799780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -783,7 +758,7 @@ BoxCollider:
   m_GameObject: {fileID: 1969799776}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3.05, y: 0.34, z: 2.69}
   m_Center: {x: 0, y: 0, z: 0.68}
@@ -987,6 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107846699}
   - component: {fileID: 2107846700}
+  - component: {fileID: 2107846701}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1024,3 +1000,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initPos: {fileID: 0}
   speed: 100
+--- !u!65 &2107846701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107846698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1475773, y: 0.2542988, z: 3.568568}
+  m_Center: {x: 0.02537775, y: -0.00041109324, z: 1.284284}

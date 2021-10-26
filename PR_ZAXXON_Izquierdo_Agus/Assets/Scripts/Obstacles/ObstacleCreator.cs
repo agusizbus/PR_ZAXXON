@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class ObstacleCreator : MonoBehaviour
 {
-    [SerializeField] GameObject brick;
+    [SerializeField] GameObject column;
+    [SerializeField] GameObject[] obstacles;
     //[SerializeField] Transform initPos;
-
     public float intervalo;
-
     InitGameScript initGameScript;
-
     private Vector3 newPos;
-
     [SerializeField] float ObstacleDist = 100f;
     
-   
+    int level;
 
 
 
@@ -26,10 +23,7 @@ public class ObstacleCreator : MonoBehaviour
 
         //LLamar a un componente público en una línea
         initGameScript = GameObject.Find("InitGameEmpty").GetComponent<InitGameScript>();
-
-        //LLamar a un componente público en dos líneas
-        //initGameObject = GameObject.Find("InitGameEmpty");
-        //initGameScript = initGameObject.GetComponent<InitGameScript>();
+        
     }
 
     // Update is called once per frame
@@ -44,16 +38,14 @@ public class ObstacleCreator : MonoBehaviour
 
         while (true)
         {
-            //intervalo = ObstacleDist / initGameScript.shipSpeed;
+            int randomNum;
 
-            newPos = new Vector3(Random.Range(-20f, 20f), Random.Range(3f, 20f), (transform.position.z +300));
+            newPos = new Vector3(Random.Range(-20f, 20f), 25, (transform.position.z +600));
 
-            //INTERVALO ALEATORIO
-            //intervalo = Random.Range(0.2f, 0.5f);
+            randomNum = Random.Range(0, obstacles.Length);
 
-            
+            Instantiate(obstacles[randomNum], newPos, Quaternion.identity);
 
-            Instantiate(brick, newPos, Quaternion.identity);
             yield return new WaitForSeconds(intervalo);
         }
     }

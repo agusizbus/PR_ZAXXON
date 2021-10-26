@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -55,17 +56,13 @@ public class PlayerMove : MonoBehaviour
 
         if (posX > limitR && desplX > 0)
         {
-
             inlimitX = false;
         }
-
         else if (posX < limitL && desplX < 0)
         {
             inlimitX = false;
         }
-
         else
-
         {
             inlimitX = true;
         }
@@ -73,18 +70,14 @@ public class PlayerMove : MonoBehaviour
 
         //desplazamiento en y
 
-        
         if (inlimitY)
         {
-
             transform.Translate(Vector3.up * desplY * Time.deltaTime * initGameScript.shipSpeed, Space.World);
         }
 
         //LIMITE EN Y
-
         if (posY > limitUp && desplY > 0)
         {
-
             inlimitY = false;
         }
 
@@ -94,22 +87,22 @@ public class PlayerMove : MonoBehaviour
         }
 
         else
-
         {
             inlimitY = true;
         }
-        
-        /*rotacion
-        float rot = desplX * 1.2f;
-        transform.Rotate(Vector3.back * Time.deltaTime * rot * 200f);
-        */
-
-
-      
-
-
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+
+       if (other.gameObject.layer == 6)
+        {
+
+            initGameScript.shipSpeed = 0;
+            print("lose");
+            SceneManager.LoadScene(0);
+        }
+    }
 
 }
 

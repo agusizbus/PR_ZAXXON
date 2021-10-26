@@ -9,15 +9,24 @@ public class PlayerRotation : MonoBehaviour
     public float fuerzaX;
     public Rigidbody rb;
     float rotX;
+    InitGameScript initGameScript;
+
+
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        initGameScript = GameObject.Find("InitGameEmpty").GetComponent<InitGameScript>();
+
+        
+
     }
 
     void FixedUpdate()
     {
         ShipRot();
+        fuerzaX = initGameScript.shipSpeed / 10;
+   
 
 
     }
@@ -25,6 +34,7 @@ public class PlayerRotation : MonoBehaviour
     {
         float rotX = Input.GetAxis("Horizontal");
         rb.AddTorque(Vector3.back * fuerzaX * rotX);
-
+        
     }
+
 }
