@@ -99,9 +99,11 @@ public class PlayerMove : MonoBehaviour
             inlimitY = true;
         }
         
-        //rotacion
+        /*rotacion
         float rot = desplX * 1.2f;
         transform.Rotate(Vector3.back * Time.deltaTime * rot * 200f);
+        */
+
 
       
 
