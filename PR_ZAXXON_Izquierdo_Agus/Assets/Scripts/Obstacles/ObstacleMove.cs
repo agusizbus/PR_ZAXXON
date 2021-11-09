@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleMove : MonoBehaviour
 {
 
-    float speed;
+    
     float posz;
     GameObject initGameObject;
     InitGameScript  initGameScript;
@@ -23,8 +23,8 @@ public class ObstacleMove : MonoBehaviour
     void Update()
     {
         posz = transform.position.z;
-        speed = initGameScript.shipSpeed * 1.5f;
-        transform.Translate(Vector3.back * Time.deltaTime * speed);
+        
+        transform.Translate(Vector3.back * Time.deltaTime * initGameScript.shipSpeed);
 
         if(posz < -20)
         {

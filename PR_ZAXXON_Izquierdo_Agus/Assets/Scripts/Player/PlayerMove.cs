@@ -7,14 +7,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] Transform initPos;
     InitGameScript initGameScript;
-    public float speed = 100;
 
     //limites movimiento
 
-    float limitR = 30f;
-    float limitL = -30f;
-    float limitUp = 30f;
-    float limitBot = 1f;
+    float limitR = 70f;
+    float limitL = -70f;
+    float limitUp = 50f;
+    float limitBot = 10f;
 
     //Variable Bool movimiento
 
@@ -32,6 +31,12 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+
+        float velocidad;
+
+
+
+        //velocidad = espacio / tiempo
     }
 
 
@@ -97,12 +102,12 @@ public class PlayerMove : MonoBehaviour
 
        if (other.gameObject.layer == 6)
         {
-
-            initGameScript.shipSpeed = 0;
-            print("lose");
-            SceneManager.LoadScene(0);
+       
+            initGameScript.Dead();
         }
     }
+
+
 
 }
 

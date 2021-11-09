@@ -27,9 +27,9 @@ public class ObstacleCreator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        intervalo = ObstacleDist / initGameScript.shipSpeed;
+        intervalo =  ObstacleDist / initGameScript.shipSpeed ;
     }
 
    IEnumerator CreateObstacles() 
@@ -46,7 +46,7 @@ public class ObstacleCreator : MonoBehaviour
 
             Instantiate(obstacles[randomNum], newPos, Quaternion.identity);
 
-            yield return new WaitForSeconds(intervalo);
+            yield return new WaitForSeconds(intervalo * 1.5f);
         }
     }
 

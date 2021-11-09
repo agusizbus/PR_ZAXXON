@@ -25,7 +25,7 @@ public class PlayerRotation : MonoBehaviour
     void FixedUpdate()
     {
         ShipRot();
-        fuerzaX = initGameScript.shipSpeed / 10;
+        fuerzaX = initGameScript.shipSpeed / 5;
    
 
 
@@ -34,6 +34,8 @@ public class PlayerRotation : MonoBehaviour
     {
         float rotX = Input.GetAxis("Horizontal");
         rb.AddTorque(Vector3.back * fuerzaX * rotX);
+        
+       
         
     }
 
