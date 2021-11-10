@@ -303,5 +303,5 @@ Animation:
   - {fileID: 7400000, guid: cbc58e646e37e69478b6c878e020d06f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_CullingType: 0
