@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class DifficultyScript : MonoBehaviour
 {
-    public Text buttonText;
+    
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,5 @@ public class DifficultyScript : MonoBehaviour
         
     }
 
-    public void NewText() 
 
-
-    {
-    
-    
-    }
 }

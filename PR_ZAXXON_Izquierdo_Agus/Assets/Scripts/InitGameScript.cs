@@ -51,6 +51,6 @@ public class InitGameScript : MonoBehaviour
         shipSpeed = 0;
         print("lose");
         gameLevel = 0;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }
