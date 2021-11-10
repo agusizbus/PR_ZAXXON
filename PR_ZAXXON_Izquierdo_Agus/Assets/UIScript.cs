@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public Text buttonText;
+    public Image lifeSprite;
     public bool diffhard = false;
     public bool musicPlays = true;
+    InitGameScript initGameScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        initGameScript = GameObject.Find("InitGameEmpty").GetComponent<InitGameScript>();
     }
 
     // Update is called once per frame
@@ -94,4 +96,6 @@ public class UIScript : MonoBehaviour
         }
 
     }
+
+
 }

@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1848692}
   - component: {fileID: 1848693}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223558096}
         m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: DifficultyText
+        m_MethodName: DifficultySwitch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

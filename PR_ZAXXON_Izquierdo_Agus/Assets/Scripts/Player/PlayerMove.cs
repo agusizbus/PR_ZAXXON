@@ -32,7 +32,7 @@ public class PlayerMove : MonoBehaviour
     {
         PlayerMovement();
 
-        float velocidad;
+        
 
 
 

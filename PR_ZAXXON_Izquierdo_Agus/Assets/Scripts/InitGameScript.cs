@@ -9,17 +9,21 @@ public class InitGameScript : MonoBehaviour
     //VARIABLES INITGAME
 
     public float shipSpeed=100;
-    private float gameSec = 0;
     public bool alive = true;
-    public float gameLevel;
+    UIScript uiScriptDiff;
+    int diffMultiplier = 1;
+    public float timer = 0;
+    //public int lifes = 3;
     
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("LevelUp");
-        
+        StartCoroutine("Timer");
     }
 
     
@@ -27,21 +31,30 @@ public class InitGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        
     }
 
     public IEnumerator LevelUp()
     {
-        for(; shipSpeed <= 500 ; shipSpeed += 5)
+        
+        for (; shipSpeed <= 500 ; shipSpeed += 5 * diffMultiplier)
         {
-           
-            
-            print(shipSpeed);
+  
+            //print(shipSpeed);
             yield return new WaitForSeconds(1f);
         }
 
         
+    }
+
+    public IEnumerator Timer()
+    {
+        for ( ; ; timer++)
+        {
+            print("llevas " + timer + " seg");
+            yield return new WaitForSeconds(1f);
+        }
     }
    
 
@@ -50,7 +63,15 @@ public class InitGameScript : MonoBehaviour
         alive = false;
         shipSpeed = 0;
         print("lose");
-        gameLevel = 0;
-        SceneManager.LoadScene(3);
+        StopCoroutine("Timer");
+
+
+
+        //lifes--;
+        //if(lifes==0)
+        //{
+            SceneManager.LoadScene(4);
+        //}
+
     }
 }
